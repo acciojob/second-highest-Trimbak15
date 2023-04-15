@@ -10,8 +10,25 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			// Initialize the maximum and second maximum values
+  let max = -Infinity;
+  let secondMax = -Infinity;
+
+  // Iterate through the array and update the maximum and second maximum values
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      secondMax = max;
+      max = arr[i];
+    } else if (arr[i] > secondMax && arr[i] != max) {
+      secondMax = arr[i];
+    }
+  }
+
+  // Return the second maximum value
+  return secondMax;
+}
 			
-		}
+		
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
